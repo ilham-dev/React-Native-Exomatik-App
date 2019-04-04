@@ -14,7 +14,7 @@ import Form from "../components/Form";
 
 import { Actions } from "react-native-router-flux";
 
-export default class Login extends Component<{}> {
+export default class Login extends React.Component {
   signup() {
     Actions.signup();
   }
