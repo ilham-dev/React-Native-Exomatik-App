@@ -8,7 +8,13 @@ import {
   TouchableOpacity
 } from "react-native";
 
+import { Actions } from "react-native-router-flux";
+
 export default class Logo extends Component<{}> {
+  goHome() {
+    Actions.home();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -31,7 +37,7 @@ export default class Logo extends Component<{}> {
           ref={input => (this.password = input)}
         />
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={this.goHome}>
           <Text style={styles.buttonText}>{this.props.type}</Text>
         </TouchableOpacity>
       </View>
