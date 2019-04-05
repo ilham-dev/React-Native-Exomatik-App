@@ -1,3 +1,3 @@
-const mainColor = "#01C89E";
+const mainColor = "white";
 
 export default mainColor;

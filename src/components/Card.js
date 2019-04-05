@@ -15,10 +15,6 @@ const Cards = props => (
       <Paragraph>Card content</Paragraph>
     </Card.Content>
     <Card.Cover source={{ uri: props.data.gambar }} />
-    <Card.Actions>
-      <Button>Cancel</Button>
-      <Button>Ok</Button>
-    </Card.Actions>
   </Card>
 );
 

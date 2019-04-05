@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button } from "react-native-paper";
+import { Card, Title, Paragraph } from "react-native-paper";
 import {
   Image,
   ImageBackground,
@@ -9,14 +9,13 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  Icon,
   View
 } from "react-native";
 import PropTypes from "prop-types";
 import mainColor from "../components/Constant";
 import Email from "../components/Email";
 import Separator from "../components/Seperator";
-import Tel from "../components/Tel";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -29,6 +28,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  socialIcon: {
+    marginLeft: 14,
+    marginRight: 14
+  },
+  socialRow: {
+    paddingTop: 14,
+    flexDirection: "row"
+  },
   emailContainer: {
     backgroundColor: "#FFF",
     flex: 1,
@@ -38,7 +45,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     paddingTop: 35
   },
-  headerContainer: {},
+  headerContainer: {
+    backgroundColor: "#f2f3f7"
+  },
   headerColumn: {
     backgroundColor: "transparent",
     ...Platform.select({
@@ -72,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent"
   },
   userCityText: {
-    color: "#A5A5A5",
+    color: "#F3F8F2",
     fontSize: 15,
     fontWeight: "600",
     textAlign: "center"
@@ -91,14 +100,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingBottom: 8,
     textAlign: "center"
+  },
+  card: {
+    margin: 10,
+    borderRadius: 10
   }
 });
 
 class Contact extends Component {
   state = {
     data: {
-      name: "Darrell Schmeler",
-      username: "Leola_VonRueden",
+      name: "M Ilham Sabar",
+      username: "Ilham-Dev",
+      about:
+        "Hi I'm Ilham Sabar biasa di panggil ilham, saya lahir pada 22 september 1993, saya berasal dari daerah terpencil di kabupaten mamuju utara lebih tepatnya di kecamatan baras. saya telah menekuni dunia programmer selama 3 tahun, 1 tahun belajar pemrograman java (Mobile App) dan 2 tahun Pemrograman web (Web App). Saya Sangat Suka Dengan Dunia IT Sejak Saya Duduk Di Bangku SMA Hingga Sekarang Saya Sudah Menyelesaikan Beberapa ProjectAplikasi.",
       address: {
         streetA: "Abbott Shoals",
         streetB: "505 Winona Place",
@@ -113,7 +128,7 @@ class Contact extends Component {
           lng: "81.3262"
         }
       },
-      website: "destany.org",
+      website: "ilham-dev.github.io",
       bio:
         "Web & Mobile UI/UX designer, Motion designer following the latest ui & ux trends",
       company: {
@@ -121,8 +136,7 @@ class Contact extends Component {
         catchPhrase: "Team-oriented hybrid neural-net",
         bs: "user-centric embrace vortals"
       },
-      avatar:
-        "https://s3.amazonaws.com/uifaces/faces/twitter/dvdwinden/128.jpg",
+      avatar: "https://avatars2.githubusercontent.com/u/13794116?s=460&v=4",
       avatarBackground:
         "https://orig00.deviantart.net/dcd7/f/2014/027/2/0/mountain_background_by_pukahuna-d73zlo5.png",
       tels: [
@@ -219,26 +233,59 @@ class Contact extends Component {
           style={styles.headerBackgroundImage}
           blurRadius={10}
           source={{
-            uri:
-              "https://orig00.deviantart.net/dcd7/f/2014/027/2/0/mountain_background_by_pukahuna-d73zlo5.png"
+            uri: this.state.data.avatarBackground
           }}
         >
           <View style={styles.headerColumn}>
             <Image
               style={styles.userImage}
               source={{
-                uri:
-                  "https://avatars2.githubusercontent.com/u/13794116?s=460&v=4"
+                uri: this.state.data.avatar
               }}
             />
-            <Text style={styles.userNameText}>M Ilham Sabar</Text>
+            <Text style={styles.userNameText}>{this.state.data.name}</Text>
             <View style={styles.userAddressRow}>
               <View style={styles.userCityRow}>
-                <Text style={styles.userCityText}>Makassar, Indonesia</Text>
+                <Text style={styles.userCityText}>{this.state.data.bio}}</Text>
+              </View>
+            </View>
+            <View style={styles.socialRow}>
+              <View>
+                <Icon
+                  size={30}
+                  type="entypo"
+                  color="#2E7DC1"
+                  name="facebook-with-circle"
+                  onPress={() => console.log("facebook")}
+                />
+              </View>
+              <View style={styles.socialIcon}>
+                <Icon
+                  size={30}
+                  type="entypo"
+                  color="#56ACEE"
+                  name="twitter-with-circle"
+                  onPress={() => console.log("twitter")}
+                />
+              </View>
+              <View>
+                <Icon
+                  size={30}
+                  type="entypo"
+                  color="#DD4C39"
+                  name="google--with-circle"
+                  onPress={() => console.log("google")}
+                />
               </View>
             </View>
           </View>
         </ImageBackground>
+        <Card style={styles.card}>
+          <Card.Content>
+            <Title>About</Title>
+            <Paragraph>{this.state.data.about}</Paragraph>
+          </Card.Content>
+        </Card>
       </View>
     );
   };

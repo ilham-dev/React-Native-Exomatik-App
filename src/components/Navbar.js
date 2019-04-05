@@ -17,15 +17,20 @@ export default class Navbar extends React.Component {
         key: "profile",
         title: "Profile",
         icon: "person",
-        barColor: "#3F51B5"
+        color: "green"
       },
       {
         key: "albums",
         title: "Albums",
         icon: "assignment",
-        barColor: "#009688"
+        color: "#009688"
       },
-      { key: "recents", title: "Recents", icon: "history", barColor: "#795548" }
+      {
+        key: "recents",
+        title: "Recents",
+        icon: "history",
+        color: "#795548"
+      }
     ]
   };
 
@@ -40,6 +45,7 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <BottomNavigation
+        barStyle={{ backgroundColor: "white" }}
         navigationState={this.state}
         onIndexChange={this._handleIndexChange}
         renderScene={this._renderScene}
