@@ -14,7 +14,7 @@ import { StyleSheet, View, StatusBar } from "react-native";
 
 import Routes from "./src/Routes";
 
-export default class App extends Component<{}> {
+export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>

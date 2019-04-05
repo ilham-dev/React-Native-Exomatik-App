@@ -1,10 +1,27 @@
 import React, { Component } from "react";
 import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
 //import { Constants } from 'expo';
+import Card from "../components/Card";
 
 const { width } = Dimensions.get("window");
 
 export default class App extends Component {
+  state = {
+    data: [
+      {
+        id: 1,
+        title: "M Ilham Sabar",
+        gambar:
+          "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_1280.jpg"
+      },
+      {
+        id: 2,
+        title: "M Ikram Sabar",
+        gambar:
+          "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_1280.jpg"
+      }
+    ]
+  };
   componentDidMount() {
     setTimeout(() => {
       this.scrollView.scrollTo({ x: -30 });
@@ -19,7 +36,7 @@ export default class App extends Component {
         }}
         style={styles.container}
         //pagingEnabled={true}
-        horizontal={true}
+        horizontal={false}
         decelerationRate={0}
         snapToInterval={width - 60}
         snapToAlignment={"center"}
@@ -30,11 +47,15 @@ export default class App extends Component {
           right: 30
         }}
       >
-        <View style={styles.view} />
-        <View style={styles.view2} />
-        <View style={styles.view} />
-        <View style={styles.view2} />
-        <View style={styles.view} />
+        {/* <View style={styles.view} /> */}
+        {/* <View style={styles.view2} /> */}
+        {/* <View style={styles.view} /> */}
+        {/* <View style={styles.view2} /> */}
+        {/* <View style={styles.view} /> */}
+
+        {this.state.data.map((obj, index) => (
+          <Card style={styles.card} key={index} data={obj} />
+        ))}
       </ScrollView>
     );
   }
@@ -59,5 +80,11 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 10
     //paddingHorizontal : 30
+  },
+  card: {
+    margin: 10,
+    backgroundColor: "blue",
+    width: width - 80,
+    borderRadius: 10
   }
 });
