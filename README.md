@@ -1,4 +1,6 @@
-# React native login, signup pages, Home Page.
+# Exomatik App
+
+## React native login, signup pages, Home Page, and Member.
 
 Make sure android studio and emulator must me installed in your pc and all the path variables must be set properly.
 
