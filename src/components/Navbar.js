@@ -21,7 +21,7 @@ export default class Navbar extends React.Component {
       },
       {
         key: "albums",
-        title: "Albums",
+        title: "Repo",
         icon: "assignment",
         color: "#009688"
       },
