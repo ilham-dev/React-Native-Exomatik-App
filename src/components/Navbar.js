@@ -1,13 +1,8 @@
 import * as React from "react";
-import { BottomNavigation, Text, View } from "react-native-paper";
-import Signup from "../pages/Signup";
-import Coursel from "../components/Corousel";
+import { BottomNavigation } from "react-native-paper";
+import Repo from "../pages/Repo";
 import Profil from "../pages/Profile";
-const MusicRoute = () => <Text>Music</Text>;
-
-const AlbumsRoute = () => <Text>Albums</Text>;
-
-const RecentsRoute = () => <Text>Recents</Text>;
+import Member from "../pages/Member";
 
 export default class Navbar extends React.Component {
   state = {
@@ -20,15 +15,15 @@ export default class Navbar extends React.Component {
         color: "green"
       },
       {
-        key: "albums",
+        key: "repo",
         title: "Repo",
-        icon: "assignment",
+        icon: "toc",
         color: "#009688"
       },
       {
-        key: "recents",
-        title: "Recents",
-        icon: "history",
+        key: "member",
+        title: "Member",
+        icon: "people",
         color: "#795548"
       }
     ]
@@ -38,8 +33,8 @@ export default class Navbar extends React.Component {
 
   _renderScene = BottomNavigation.SceneMap({
     profile: Profil,
-    albums: Coursel,
-    recents: RecentsRoute
+    repo: Repo,
+    member: Member
   });
 
   render() {

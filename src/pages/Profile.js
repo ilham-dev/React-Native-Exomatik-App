@@ -19,14 +19,15 @@ import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#f2f3f7",
     borderWidth: 0,
     flex: 1,
     margin: 0,
     padding: 0
   },
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#f2f3f7"
   },
   socialIcon: {
     marginLeft: 14,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     paddingTop: 35
   },
   headerContainer: {
+    flex: 1,
     backgroundColor: "#f2f3f7"
   },
   headerColumn: {
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 26
   },
   scroll: {
-    backgroundColor: "#FFF"
+    backgroundColor: "#f2f3f7"
   },
   telContainer: {
     backgroundColor: "#FFF",
@@ -295,7 +297,7 @@ class Contact extends Component {
         <View style={styles.container}>
           <Card containerStyle={styles.cardContainer}>
             {this.renderHeader()}
-            {Separator()}
+            {/* {Separator()} */}
           </Card>
         </View>
       </ScrollView>

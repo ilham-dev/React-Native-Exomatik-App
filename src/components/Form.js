@@ -5,7 +5,8 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Platform
 } from "react-native";
 
 import { Actions } from "react-native-router-flux";
@@ -56,6 +57,14 @@ const styles = StyleSheet.create({
 
   inputBox: {
     width: 300,
+    ...Platform.select({
+      ios: {
+        height: 35
+      },
+      android: {
+        backgroundColor: "blue"
+      }
+    }),
 
     backgroundColor: "rgba(255, 255,255,0.2)",
 

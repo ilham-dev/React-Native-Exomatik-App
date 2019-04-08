@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, Platform } from "react-native";
 import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
 const { width } = Dimensions.get("window");
 
@@ -14,32 +14,22 @@ const Cards = props => (
       <Title>{props.data.title}</Title>
       <Paragraph>Card content</Paragraph>
     </Card.Content>
-    <Card.Cover source={{ uri: props.data.gambar }} />
+    <Card.Cover style={styles.img} source={{ uri: props.data.gambar }} />
   </Card>
 );
 
 const styles = StyleSheet.create({
-  container: {},
-  view: {
-    marginTop: 100,
-    backgroundColor: "blue",
-    width: width - 80,
-    margin: 10,
-    height: 200,
-    borderRadius: 10
-    //paddingHorizontal : 30
-  },
-  view2: {
-    marginTop: 100,
-    backgroundColor: "red",
-    width: width - 80,
-    margin: 10,
-    height: 200,
-    borderRadius: 10
-    //paddingHorizontal : 30
-  },
   card: {
-    margin: 10,
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        // margin: 1
+      },
+      android: {
+        margin: 10
+      }
+    }),
+    marginTop: 10,
     borderRadius: 10
   }
 });
