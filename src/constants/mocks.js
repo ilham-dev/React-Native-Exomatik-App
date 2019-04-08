@@ -54,7 +54,16 @@ const profile = {
   username: "ilham-dev",
   location: "Indonesia",
   email: "ilhamsabar@gmail.com",
-  avatar: require("../assets/images/profile.jpeg")
+  avatar: require("../assets/images/profile.jpeg"),
+  name: "M Ilham Sabar",
+  username: "Ilham-Dev",
+  about:
+    "Hi I'm Ilham Sabar biasa di panggil ilham, saya lahir pada 22 september 1993, saya berasal dari daerah terpencil di kabupaten mamuju utara lebih tepatnya di kecamatan baras. saya telah menekuni dunia programmer selama 3 tahun, 1 tahun belajar pemrograman java (Mobile App) dan 2 tahun Pemrograman web (Web App). Saya Sangat Suka Dengan Dunia IT Sejak Saya Duduk Di Bangku SMA Hingga Sekarang Saya Sudah Menyelesaikan Beberapa ProjectAplikasi.",
+  website: "ilham-dev.github.io",
+  bio:
+    "Web & Mobile UI/UX designer, Motion designer following the latest ui & ux trends",
+  avatarBackground:
+    "https://orig00.deviantart.net/dcd7/f/2014/027/2/0/mountain_background_by_pukahuna-d73zlo5.png"
 };
 
 const repo = [
