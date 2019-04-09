@@ -39,8 +39,9 @@ const styles = StyleSheet.create({
     paddingTop: 30
   },
   headerBackgroundImage: {
+    borderRadius: 50,
     paddingBottom: 20,
-    paddingTop: 35
+    paddingTop: 10
   },
   headerContainer: {
     flex: 1,
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
         marginTop: -1
       },
       android: {
+        marginBottom: 50,
         alignItems: "center"
       }
     })
@@ -100,6 +102,7 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   card: {
+    marginTop: -40,
     margin: 10,
     borderRadius: 10
   }
@@ -120,6 +123,8 @@ export default class Contact extends Component {
         <ImageBackground
           style={styles.headerBackgroundImage}
           blurRadius={10}
+          borderBottomLeftRadius={10}
+          borderBottomRightRadius={10}
           source={{
             uri: this.state.profile.avatarBackground
           }}

@@ -2,6 +2,7 @@ import * as React from "react";
 import { BottomNavigation } from "react-native-paper";
 import Repo from "../pages/Repo";
 import Profil from "../pages/Profile";
+import List from "../pages/List";
 import Member from "../pages/Member";
 
 export default class Navbar extends React.Component {
